@@ -1,0 +1,51 @@
+<app-my-header name="Лабораторна робота №2"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Факультет інформаційних технологій
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-card 
+          *ngFor="let kafedra of kafedras.kafedras.filter(isKafedraFit); index as i"
+        >
+          <ion-card-header>
+            <ion-card-title>{{kafedra.kafName}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label> адреса: {{kafedra.address}} </ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Факультет кібернетики
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-card 
+        *ngFor="let kafedra of kafedras.kafedras.filter(isKafedraFk); index as i"
+        >
+          <ion-card-header>
+            <ion-card-title>{{kafedra.kafName}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label> адреса: {{kafedra.address}} </ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <canvas #lineCanvas></canvas>
+</ion-content>
