@@ -10,8 +10,7 @@
     <ion-card-content>
       <ion-list>
         <ion-card 
-          *ngFor="let kafedra of kafedras.kafedras.filter(isKafedraFit); index as i"
-        >
+          *ngFor="let kafedra of kafedras.kafedras.filter(isKafedraFit); index as i">
           <ion-card-header>
             <ion-card-title>{{kafedra.kafName}}</ion-card-title>
           </ion-card-header>
@@ -33,8 +32,7 @@
     <ion-card-content>
       <ion-list>
         <ion-card 
-        *ngFor="let kafedra of kafedras.kafedras.filter(isKafedraFk); index as i"
-        >
+        *ngFor="let kafedra of kafedras.kafedras.filter(isKafedraFk); index as i">
           <ion-card-header>
             <ion-card-title>{{kafedra.kafName}}</ion-card-title>
           </ion-card-header>

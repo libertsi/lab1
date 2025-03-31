@@ -69,7 +69,6 @@ export class CloudPage implements OnInit {
     if(this.lineChart instanceof Chart) {
         this.lineChart.destroy();
     }
-    const readerCounts: { [key: string]: number } = {};
 
     this.lineChart = new Chart(this.lineCanvas?.nativeElement, {
         type: 'bar', 
@@ -91,7 +90,7 @@ export class CloudPage implements OnInit {
             }
         }
     });
-}
+  }
   ngOnInit() {
     this.load();
   }

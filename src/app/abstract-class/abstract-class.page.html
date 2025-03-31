@@ -1,0 +1,30 @@
+<app-my-header name="Лабораторна робота №3"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-header>
+      <ion-card-title>Завдання2</ion-card-title>
+    </ion-header>
+    <ion-card-content>
+      <p>
+        Позначити кольорами значення які
+        більше за середню
+        вагу, менше
+        середню вагу та
+        дорівнює її.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Результат
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let sportItem of sportItems" [style.--background]="getColor(sportItem.weight)">
+        {{sportItem.displayInfo()}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
