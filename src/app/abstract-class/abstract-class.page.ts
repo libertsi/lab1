@@ -59,7 +59,6 @@ export class AbstractClassPage implements OnInit {
     }
 
     getColor(weight: number){
-      console.log(parseFloat(this.avgWeight.toFixed(1)))
       if(weight < parseFloat(this.avgWeight.toFixed(1))) return 'rgb(0, 255, 34)'
       if(weight == parseFloat(this.avgWeight.toFixed(1))) return 'rgb(0, 8, 255)'
       return 'rgb(255, 0, 0)'

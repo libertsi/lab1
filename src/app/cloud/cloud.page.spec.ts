@@ -14,4 +14,5 @@ describe('CloudPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

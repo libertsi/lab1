@@ -23,4 +23,7 @@ export abstract class SportItems{
             'Weight= ' + this.weight
         )
     }
+    calcWeight(){
+        return(this.weight)
+    }
 }

@@ -5,4 +5,7 @@ export class Dumbell extends SportItems{
         super(name, weight, material);
         this.isAdjustable = isAdjustable;
     }
+    override calcWeight(): number {
+        return this.weight*2;
+    }
 }

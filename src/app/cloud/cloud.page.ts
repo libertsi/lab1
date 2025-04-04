@@ -100,4 +100,5 @@ export class CloudPage implements OnInit {
   isKafedraFk(kafedta: Kafedra): boolean {
     return kafedta.facultyName == "Факультет кібернетики"
   }
+  
 }
