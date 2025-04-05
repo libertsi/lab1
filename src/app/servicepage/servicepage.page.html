@@ -1,0 +1,77 @@
+<app-my-header name="Лабораторна робота №5"></app-my-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <h1>Завдання</h1>
+      <p>
+        Завдання: <br>
+Необхідно додати у розроблений в попередній лабораторній роботі застосунок сторінку для роботи з сервісами. Сторінку викликати у головному меню застосунку. 
+Кожна сторінка повинна містити:<br>
+• "шапку", що включає ПІБ студента, номер групи і номер варіанту;<br>
+• текст завдання;<br>
+• форму для введення початкових значень.<br>
+Результати роботи програми повинні відображатися на кожній сторінці окремо.<br>
+Завдання по роботі з сервісами:<br>
+1. Розробити сервіс для табулювання функції відповідно до варіанту<br>
+2. Розробити сервіс для розрахунку значень функції за допомогою ряду відповідно до варіанту<br>
+3. Розробити сервіс для розрахунку значень функції за допомогою рекурсії відповідно до варіанту<br>
+4. Розробити сервіс для логування обчислених значень у консоль та використати його у попередніх трьох сервісах<br>
+5. У основному застосунку підключити сервіси, вивести результати усіх розрахунків та побудувати графіки для усіх обрахунків.<br>
+Для перевірки роботи розроблених сервісів необхідно використовувати Unit тести. Необхідно протестувати:<br>
+• проведення розрахунків.<br>
+      </p>
+      <img src="assets/Screenshot.png" alt="Screenshot">
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Xn"
+          labelPlacement="stacked"
+          type="number"
+          #InputXn
+          value="-0.2"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Xk"
+          labelPlacement="stacked"
+          type="number"
+          #InputXk
+          value="0.2"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="h"
+          labelPlacement="stacked"
+          type="number"
+          #InputH
+          value="0.1"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-button (click)="ras(InputXn.value, InputXk.value, InputH.value)">
+        Calculate
+      </ion-button>
+      <ion-card>
+        <ion-card-title>
+          <h1>Results:</h1>
+        </ion-card-title>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let item of xyInput ; index as i">
+              <ion-label>
+                <h5>{{ xx[i] }}</h5>
+                <h5>{{ item }}</h5>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+  <canvas #lineCanvas></canvas>
+</ion-content>
