@@ -33,6 +33,9 @@ export class ServicepagePage implements OnInit {
       let xn1 = parseFloat(xn);
       let xk1 = parseFloat(xk);
       let h1 = parseFloat(h);
+      if(xn1 <= -1 ||  xk1 > 1 ){
+        console.log('Введіть вірні дані')
+      } else {
       this.xx = [];
       this.yyTab = [];
       let obj = this.tabService.getTab(xn1, xk1, h1);
@@ -44,6 +47,8 @@ export class ServicepagePage implements OnInit {
       this.xyRecursion = this.recursionService.getTab(xn1, xk1, h1);
       this.input();
       this.lineChartMake();
+      }
+      
     }catch{}
   
 

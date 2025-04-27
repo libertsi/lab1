@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Dumbell } from './Dumbbell';
 
-describe('Javelin testing', () => {
+describe('Dumbell testing', () => {
   let dumbell:Dumbell;
 
   beforeEach(() => {
