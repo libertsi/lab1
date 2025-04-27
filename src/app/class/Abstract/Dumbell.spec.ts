@@ -16,4 +16,9 @@ describe('Dumbell testing', () => {
     expect(dumbell.calcWeight()).toBe(24);
   });
   
+  it('should be error', () => {
+    expect(() => new Dumbell("Dumbell", -2, "metal", false)).toThrow(new Error('вага не може бути менша за 0'));
+  });
+
+  
 });
