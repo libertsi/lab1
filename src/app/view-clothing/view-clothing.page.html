@@ -1,6 +1,11 @@
 <app-my-header name="Лабораторна робота №6"></app-my-header>
 <ion-content [fullscreen]="true">
+  <ion-button (click)="addFormShow()">
+    Додати товар
+  </ion-button>
+  <app-add-clothing *ngIf="showAddForm" (clothingAdd)="addClothing($event)">
 
+  </app-add-clothing>
   <ion-card *ngFor="let clothing of cloudReaderService.clothings; index as i">
     <ion-card-header>
       <ion-card-title>{{ clothing.getName() }}</ion-card-title>
@@ -17,5 +22,12 @@
         <ion-label>Матеріал: {{ clothing.getMaterial() }} </ion-label>
       </ion-item>
     </ion-card-content>
+    <ion-button (click)="editFormShow(i)">
+      Редагувати 
+    </ion-button>
+    <app-edit-clothing  *ngIf="showEditForm && i == editFormNumber"
+    (clothingEdit)="editClothing($event, i)"
+    [clothing] = "clothing">
+  </app-edit-clothing>
   </ion-card>
   </ion-content>

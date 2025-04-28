@@ -16,7 +16,10 @@ export class ClothingFactory {
             case сlothingType[3]:
                 return new Jeans(data.name, data.brand, data.price, data.material, data.clothingType, data.size, data.season, data.belt);
             default:
+                
+                console.log();
                 throw new Error('Немає такого одягу в магазині');
+                
         }
     }
 }

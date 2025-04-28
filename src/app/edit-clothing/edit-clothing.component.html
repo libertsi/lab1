@@ -1,0 +1,102 @@
+<form [formGroup]="clothingFrom" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Відредактувати товар</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Name"
+          formControlName="name"
+          labelPlacement="floating"
+          errorText="Ім'я не може бути пустим"
+          [value]="clothing.getName()"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Brand"
+          formControlName="brand"
+          labelPlacement="floating"
+          errorText="Бренд не може бути пустим"
+          [value]="clothing.getBrand()"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Price"
+          formControlName="price"
+          labelPlacement="floating"
+          errorText="Ціна не може бути пустим"
+          type="number"
+          [value]="clothing.getPrice()"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Material"
+          formControlName="material"
+          labelPlacement="floating"
+          errorText="Матеріал не може бути пустим"
+          [value]="clothing.getMaterial()"
+        >
+        </ion-input>
+      </ion-item>
+      <fieldset *ngIf="clothing.getClothingType() === types[0] || clothing.getClothingType() === types[1] || clothing.getClothingType() === types[3]">
+        <ion-item>
+          <ion-input
+            label="Size"
+            formControlName="size"
+            labelPlacement="floating"
+            errorText="Розмір не може бути пустим"
+          >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Season"
+            formControlName="season"
+            labelPlacement="floating"
+            errorText="Сезон не може бути пустим"
+            >
+          </ion-input>
+        </ion-item>
+        <ion-item *ngIf="clothing.getClothingType() === types[1]">
+          <ion-input 
+            label="Heel"
+            formControlName="heel"
+            labelPlacement="floating"
+            errorText="Підбори не може бути пустим"
+            >
+          </ion-input>
+        </ion-item>
+        <ion-item *ngIf="clothing.getClothingType() === types[3]">
+          <ion-input 
+            label="Belt"
+            formControlName="belt"
+            labelPlacement="floating"
+            errorText="Ремень не може бути пустим"
+            >
+          </ion-input>
+        </ion-item>
+      </fieldset>
+      <fieldset *ngIf="clothing.getClothingType() === types[2]">
+        <ion-item>
+          <ion-input 
+            label="BodyPart"
+            formControlName="bodyPart"
+            labelPlacement="floating">
+            
+          </ion-input>
+        </ion-item>
+
+      </fieldset>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type ="submit" (click)="onSubmit()" color="primary">
+    Відредактувати
+  </ion-button>
+</form>

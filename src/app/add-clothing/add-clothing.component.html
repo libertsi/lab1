@@ -1,0 +1,114 @@
+<form [formGroup]="clothingForm" >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Додати товар</ion-card-title>
+    </ion-card-header> 
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Name"
+          formControlName="name"
+          labelPlacement="floating"
+          errorText="Ім'я не може бути пустим"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Brand"
+          formControlName="brand"
+          labelPlacement="floating"
+          errorText="Бренд не може бути пустим"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Price"
+          formControlName="price"
+          labelPlacement="floating"
+          errorText="Ціна не може бути пустим"
+          type="number"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Material"
+          formControlName="material"
+          labelPlacement="floating"
+          errorText="Матеріал не може бути пустим"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-segment (ionChange)="onTypeChange($event.detail.value)">
+        <ion-segment-button value="Outerwear" content-id="Outerwear">
+          <ion-label>Верхній одяг</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Accessories" content-id="Accessories">
+          <ion-label>Аксесуари</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <ion-segment-view>
+        <ion-segment-content id="Outerwear">
+          <ion-checkbox labelPlacement="stacked" alignment="center"
+          (ionChange)="onFootwearChange($event.detail.checked)"
+          >Взуття</ion-checkbox>
+          <ion-checkbox labelPlacement="stacked" alignment="center"
+          (ionChange)="onJeansChange($event.detail.checked)"
+          >Джинси</ion-checkbox>
+          <ion-item>
+            <ion-input 
+              label="Size"
+              formControlName="size"
+              labelPlacement="floating"
+              type="number"
+              >
+              
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input 
+              label="Season"
+              formControlName="season"
+              labelPlacement="floating">
+            </ion-input>
+          </ion-item>
+         
+          <ion-item *ngIf="currentType === types[1]">
+            <ion-input 
+              label="Heel"
+              formControlName="heel"
+              labelPlacement="floating"
+              >
+            </ion-input>
+          </ion-item>
+          <ion-item *ngIf="currentType === types[3]">
+            <ion-input 
+              label="Belt"
+              formControlName="belt"
+              labelPlacement="floating"
+              >
+            </ion-input>
+          </ion-item>
+        </ion-segment-content>
+        <ion-segment-content id="Accessories">
+          <ion-item>
+            <ion-input 
+              label="BodyPart"
+              formControlName="bodyPart"
+              labelPlacement="floating">
+            </ion-input>
+          </ion-item>
+        </ion-segment-content>
+      </ion-segment-view>
+    </ion-card-content>
+  </ion-card>
+  <ion-button
+    type="submit"
+    (click)="onSubmit()"
+    [disabled]="clothingForm.invalid"
+  >
+    Додати
+  </ion-button>
+</form>
