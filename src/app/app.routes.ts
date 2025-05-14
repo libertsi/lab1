@@ -21,4 +21,8 @@ export const routes: Routes = [
     path: 'view-clothing',
     loadComponent: () => import('./view-clothing/view-clothing.page').then( m => m.ViewClothingPage)
   },
+  {
+    path: 'filter',
+    loadComponent: () => import('./filter/filter.page').then( m => m.FilterPage)
+  },
 ];

@@ -21,4 +21,15 @@ describe('Dumbell testing', () => {
   });
 
   
+  it('calc weight with adjustment', () => {
+    dumbell = new Dumbell("Dumbell", 12, "metal", true);
+    expect(dumbell.calcWeight()).toBe(24);
+  });
+  
+  it('calc weight with adjustment and material', () => {
+    dumbell = new Dumbell("Dumbell", 12, "Metal", true);
+    expect(dumbell.calcWeight()).toBe(24);
+  });
+  
+  
 });

@@ -29,4 +29,12 @@ describe('Test Jeans', () => {
         jeans = new Jeans('Jeans', 'Nike', 20, 'Metal', 'Jeans', 1, 'summer', false);
         expect(jeans.getPrice()).toBe(22);
     });
+
+    it('Check details', () => {
+        expect(jeans.getDetails()).toEqual(['Розмір: 42', 'Сезон: summer', 'Чи потрібен ремень: false']);
+    })
+    it('Check belt', () => {
+        jeans = new Jeans('Jeans', 'Nike', 20, 'Metal', 'Jeans', 1, 'summer', true);
+        expect(jeans.getBelt()).toBe(true);
+    });
 });

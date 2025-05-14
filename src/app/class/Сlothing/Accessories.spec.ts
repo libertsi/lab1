@@ -17,4 +17,11 @@ describe('Test Accessories', () => {
         accessories = new Accessories('Braslet', 'Nike', 20, 'Metal', 'Accessories', 'leg');
         expect(accessories.getPrice()).toBe(10);
     });
+    it('Check details', () => {
+        expect(accessories.getDetails()).toEqual(['Частина тіла: hand']);
+    })
+    it('Check body part', () => {
+        accessories = new Accessories('Braslet', 'Nike', 20, 'Metal', 'Accessories', 'leg');
+        expect(accessories.getBodyPart()).toBe('leg');
+    });
 });

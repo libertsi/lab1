@@ -21,4 +21,13 @@ describe('Test Outerwear', () => {
         outerwear = new Outerwear('Coat', 'Nike', 20, 'Metal', 'Outerwear', 1, 'spring');
         expect(outerwear.getPrice()).toBe(20);
     });
+    it('Check size', () => {
+        expect(outerwear.getSize()).toBe(1);
+    });
+    it('Check season', () => {
+        expect(outerwear.getSeason()).toBe('summer');
+    });
+    it('Check details', () => {
+        expect(outerwear.getDetails()).toEqual(['Розмір: 1', 'Сезон: summer']);
+    })
 });

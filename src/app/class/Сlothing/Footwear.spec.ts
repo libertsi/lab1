@@ -45,4 +45,7 @@ describe('Test Footwear', () => {
         footwear = new Footwear('Boots', 'Nike', 20, 'Metal', 'Footwear', 1, 'winter', false);
         expect(footwear.getPrice()).toBe(24);
     });
+    it('Check details', () => {
+        expect(footwear.getDetails()).toEqual(['Розмір: 1', 'Сезон: summer', 'Чи є у взуття підбори: false']);
+    })
 });

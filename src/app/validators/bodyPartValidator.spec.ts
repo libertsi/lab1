@@ -1,4 +1,5 @@
 import {isValidBodyPart} from "./bodyPartValidator";
+import {bodyPartValidator} from "./bodyPartValidator";
 describe('isValidBodyPart', () => {
 
   it('valid BodyPart', () => {
@@ -22,5 +23,4 @@ describe('isValidBodyPart', () => {
     let bodyPart = isValidBodyPart('asdasd');
     expect(bodyPart).toBe(false);
   });
-
 });
